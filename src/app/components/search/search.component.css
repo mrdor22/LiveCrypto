@@ -1,0 +1,65 @@
+
+
+.c-grid {
+    padding: 2em;
+    margin: 2em;
+}
+
+.card { 
+    background-color: #333435;
+
+    margin: 20px;
+    padding: 20px;
+    max-height: 500px;
+    height: min-content;
+    max-height: 100%;
+}
+
+.es:hover 
+{background-color: rgb(59, 59, 59);
+transition: .5s ease-in;}
+
+
+.card { 
+cursor: pointer;
+}
+
+::-webkit-input-placeholder {
+    text-align: center;
+ }
+
+ input { 
+     text-align: center;
+ }
+
+ .ho:hover {
+     transition: 1s ease in;
+     background-color: black;
+ }
+
+
+
+
+.card-img-top {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ height: 42%;
+ width: 42%;
+} 
+
+input {
+    background-color: #e6e6e6;
+}
+
+
+
+  @media screen and (max-width: 1200px) {
+    img {
+    margin-left: 103px;
+    }
+  }
+
+  .img-responsive {
+    margin: 0 auto;
+}

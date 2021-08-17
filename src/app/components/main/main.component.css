@@ -1,0 +1,46 @@
+  
+#coins {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  #coins td,
+  #coins th {
+    color: rgb(235, 235, 235);
+    border: 1px solid rgb(255, 255, 255);
+    padding: 8px;
+  }
+  
+  #coins tr:nth-child(even) {
+    background-color: #ffffff;
+  }
+  
+  #coins tr {
+    background-color:rgba(104, 169, 230, 0.219)
+  }
+  
+  #coins th  {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #ffc400;
+    color: #333;
+  }
+
+ 
+  .containers {
+ padding-left: 20%;
+ padding-right: 20%;
+  }
+
+
+  @media screen and (max-width: 500px) {
+    .containers {
+      padding-left: 0%;
+      padding-right: 0%;    }
+  }
+
+
+
+  

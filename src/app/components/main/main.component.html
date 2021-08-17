@@ -1,0 +1,63 @@
+
+<div class="container animate__animated animate__backInDown" >
+  <br><br><br>
+  <h4 class="text-center" style="color: white;">Sign Up Now & Get 5% Discount!</h4>
+
+  <a href="https://www.binance.com/en/register?ref=16529953">
+  <img class="img-fluid" src="../../../assets/banner.jpg" alt="">
+</a>
+</div>
+<br>
+<h1 style="text-align: center;color: white;;">Crypto Tracker</h1>
+<br><br>
+<br>
+
+<div class="containers"  >
+
+<div class="table-responsive">
+    <table id="coins" class="table table-sm">
+      <thead>
+        <tr>
+            <th style="width: 1%;">
+                Logo
+              </th>
+          <th style="width: 2%;">
+            No
+          </th>
+          <th>
+            Name
+          </th>
+          <th>
+          Change in % (24H)
+          </th>
+          <th>
+            Market Cap
+          </th>
+          <th>
+            Price
+          </th>
+        </tr>
+      </thead>
+      <tbody style="border-radius: 30px;
+      " *ngFor="let coin of list | paginate: { itemsPerPage: 25, currentPage: page, totalItems: totalRecords } ">
+        <tr>
+          <td (click) = "goToDetails(coin)"><img src="{{ coin.image }}" alt="image" height="35px" width="35px"></td>
+
+          <td   (click) = "goToDetails(coin)">{{ coin.market_cap_rank }}</td>
+          <td (click) = "goToDetails(coin)" class="coinHover"><b> {{ coin.name }} </b></td>
+          <td (click) = "goToDetails(coin)" class="coinHover"  ><b  [ngStyle]="{ 'color' : (coin.price_change_percentage_24h > 0) ? 'rgb(12, 204, 12)' : '#F6322E' }">   <span *ngIf="coin.price_change_percentage_24h > 0">+</span>{{coin.price_change_percentage_24h | number:'1.2-2'}}% </b></td>
+          <td (click) = "goToDetails(coin)"><b> {{ coin.market_cap  | currency}}</b></td>
+          <td [ngStyle]="{ 'color' : (coin.current_price  > (coin.high_24h % 1)) ? 'rgb(12, 204, 12)' : '#F6322E' }" (click) = "goToDetails(coin)" ><b> ${{ coin.current_price }}</b></td>
+        </tr>
+      </tbody>
+      
+    </table>
+    <div class="col-xs-12" style="display: flex; justify-content: center; align-items: center;">
+        <pagination-controls style="margin:0;padding:0;height:100%;color: white; background-color: rgb(32, 30, 30);" (pageChange)="page = $event"></pagination-controls>
+        <br>
+    <br><br><br><br>
+
+        <!-- <button class="btn btn-primary" (click) ="nextPage()">Next</button> -->
+    </div>
+  </div>
+</div>

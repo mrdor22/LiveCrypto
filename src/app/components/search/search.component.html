@@ -1,0 +1,52 @@
+<div class="container" >
+ 
+    <div class="row " style="padding-top: 50px; margin-top: 50px;">
+        <br>
+        <br>
+        <br>
+    
+        <div class="row">
+            
+            <input class="form-control form-control-sm" [(ngModel)]="term" type="search" id="anchor" style="height: 10%;"
+            placeholder="Search For Coin" aria-label="Search" >
+           
+        </div>
+
+    <ng-container 
+    *ngFor="let coin of fixedCoins | filter: term; let index = index;  trackBy : trackDemo">
+    
+    <div *ngIf="index < 9" (click)="getCoin(coin)" class="animate__animated animate__bounceIn col-lg-4 col-md-6 es" style="height: 440px;; border: 1px solid grey;    border-radius: 30px;
+
+">
+<br>
+       <img src="{{coin.image}}  " height="210px" width="120px" class="card-img-top img-responsive text-center" alt="{{coin.id}}"
+       style="display: block; margin-top: 15px;">
+
+  
+
+
+                <div class="card-body">
+                    <span class="card-title text-center"
+                        style="width:100%;font-size: 1.5em; color: white; display: inline-block;">{{coin.name | uppercase }}</span>
+                    <div class="row" stonyle="justify-content: center; display: flex; align-items: center;">
+                    </div>
+                        <a style="margin-top: 30px; justify-content: center; align-items: center;display: flex;"
+                        [ngStyle]="{ 'background-color' : (coin.price_change_percentage_24h > 0) ? '#01B92C' : '#F6322E' }"
+                        href="#" class="btn text-center">
+                        
+
+                        <span *ngIf="coin.price_change_percentage_24h > 0">+</span>{{coin.price_change_percentage_24h |
+                            number:'1.2-2'}}%</a>
+                            
+                   
+                </div>
+
+
+            </div>
+
+        </ng-container>
+    </div>
+
+<br><br><br><br><br><br>
+
+</div>
